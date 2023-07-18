@@ -10,6 +10,6 @@ public class Rei extends PecaXadrez {
     }
 
     public String toString(){
-        return "R";
+        return "K";
     }
 }
