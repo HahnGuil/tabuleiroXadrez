@@ -41,10 +41,10 @@ public class UI {
 
         try {
             String s = sc.nextLine();
-            char coluna = s.charAt(0);
-            int linha = Integer.parseInt(s.substring(1));
+            char colunaLida = s.charAt(0);
+            int linhaLida = Integer.parseInt(s.substring(1));
 
-            return new PosicaoXadrez(coluna, linha);
+            return new PosicaoXadrez(colunaLida, linhaLida);
         }
         catch (RuntimeException e){
             throw new InputMismatchException("Erro na leitura de posição, valores válidos são de a1 até h8.");
@@ -84,7 +84,7 @@ public class UI {
 
     public static void imprimeTabuleiro(PecaXadrez[][] pecas, boolean[][]movimentosPossiveis){
         for(int i = 0; i < pecas.length; i++){
-            System.out.print((8 - 1) + " ");
+            System.out.print((8 - i) + " ");
             for(int j = 0; j < pecas.length; j++){
                 imprimePeca(pecas[i][j], movimentosPossiveis[i][j]);
             }

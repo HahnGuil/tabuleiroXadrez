@@ -24,9 +24,7 @@ public class Programa {
         while (!partidaXadrez.getCheckMate()){
 
             try {
-//              Metodo implementado na classe UI, que limpa a tela a cada nova inserção
                 UI.limpaTela();
-//              Meotodo que inicia a partida de xadrez, com as peças em suas devidas posições
                 UI.imprimePartida(partidaXadrez, pecasCapturadas);
                 System.out.println();
 
@@ -39,6 +37,7 @@ public class Programa {
 
                 System.out.print("Posição de destino: ");
                 PosicaoXadrez destino = UI.lePosicaoPecaXadrez(sc);
+
                 PecaXadrez pecaCapturada = partidaXadrez.executaMovimentoXadrez(origem, destino);
 
                 if(pecaCapturada != null){
