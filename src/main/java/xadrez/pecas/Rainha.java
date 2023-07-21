@@ -15,13 +15,13 @@ public class Rainha extends PecaXadrez {
     @Override
     public boolean[][] movimentosPossiveis() {
         boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
-
         Posicao auxP = new Posicao(0, 0);
+
 //        Verificando acima
         auxP.setValores(posicao.getLinha() - 1, posicao.getColuna());
         while (getTabuleiro().existePosicao(auxP) && !getTabuleiro().existePeca(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
-            auxP.setLinha(posicao.getLinha() - 1);
+            auxP.setLinha(auxP.getLinha() - 1);
         }
         if(getTabuleiro().existePosicao(auxP) && isPecaOponente(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
@@ -31,7 +31,7 @@ public class Rainha extends PecaXadrez {
         auxP.setValores(posicao.getLinha() + 1, posicao.getColuna());
         while (getTabuleiro().existePosicao(auxP) && !getTabuleiro().existePeca(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
-            auxP.setLinha(posicao.getLinha() + 1);
+            auxP.setLinha(auxP.getLinha() + 1);
         }
         if(getTabuleiro().existePosicao(auxP) && isPecaOponente(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
@@ -41,7 +41,7 @@ public class Rainha extends PecaXadrez {
         auxP.setValores(posicao.getLinha(), posicao.getColuna() - 1);
         while (getTabuleiro().existePosicao(auxP) && !getTabuleiro().existePosicao(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
-            auxP.setColuna(posicao.getColuna() - 1);
+            auxP.setColuna(auxP.getColuna() - 1);
         }
         if(getTabuleiro().existePosicao(auxP) && isPecaOponente(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
@@ -51,7 +51,7 @@ public class Rainha extends PecaXadrez {
         auxP.setValores(posicao.getLinha(), posicao.getColuna() + 1);
         while (getTabuleiro().existePosicao(auxP) && !getTabuleiro().existePosicao(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
-            auxP.setColuna(posicao.getColuna() + 1);
+            auxP.setColuna(auxP.getColuna() + 1);
         }
         if(getTabuleiro().existePosicao(auxP) && isPecaOponente(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;

@@ -14,10 +14,11 @@ public class Bispo extends PecaXadrez {
     @Override
     public boolean[][] movimentosPossiveis() {
         boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
-
         Posicao auxP = new Posicao(0, 0);
+
 //        Verificando acima esquerda
         auxP.setValores(posicao.getLinha() - 1, posicao.getColuna() - 1);
+
         while (getTabuleiro().existePosicao(auxP) && !getTabuleiro().existePeca(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
             auxP.setValores(auxP.getLinha() - 1, auxP.getColuna() - 1);

@@ -57,13 +57,12 @@ public class Tabuleiro {
         Peca aux = peca(posicao);
         aux.posicao = null;
         pecas[posicao.getLinha()][posicao.getColuna()] = null;
-
         return aux;
 
     }
 
     private boolean existePosicao(int coluna, int linha){
-        return linha >= 0 && linha < linhas && coluna >= 0 && coluna < colunas;
+        return (linha >= 0 && linha < linhas) && (coluna >= 0 && coluna < colunas);
     }
 
     public boolean existePosicao(Posicao posicao){

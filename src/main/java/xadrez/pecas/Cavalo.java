@@ -41,7 +41,7 @@ public class Cavalo extends PecaXadrez {
             mat[auxP.getLinha()][auxP.getColuna()] = true;
         }
 
-        auxP.setValores(posicao.getLinha() + 1, posicao.getColuna() + 1);
+        auxP.setValores(posicao.getLinha() + 1, posicao.getColuna() + 2);
         if(getTabuleiro().existePosicao(auxP) && podeMover(auxP)){
             mat[auxP.getLinha()][auxP.getColuna()] = true;
         }
