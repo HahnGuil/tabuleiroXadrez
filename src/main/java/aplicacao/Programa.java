@@ -44,6 +44,16 @@ public class Programa {
                     pecasCapturadas.add(pecaCapturada);
                 }
 
+                if(partidaXadrez.getPromocao() != null){
+                    System.out.print("Entre com a peça a ser promovida: (B/C/Q/T): ");
+                    String tipo = sc.nextLine().toUpperCase();
+                    while (!tipo.equals("B") && !tipo.equals("C") && !tipo.equals("T") && !tipo.equals("Q")){
+                        System.out.print("Valor Invalido digite uma das 4 peças: (B/C/Q/T): ");
+                        tipo = sc.nextLine().toUpperCase();
+                    }
+                    partidaXadrez.replacePecaPromovida(tipo);
+                }
+
             }
             catch (XadrezException e){
                 System.out.println(e.getMessage());
